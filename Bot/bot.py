@@ -2,7 +2,7 @@ import requests
 import datetime
 import  subprocess
 
-token = '1251046251:AAFMbOFOXo9fZx7BJ3CRMO9KQCMBqKOfjjo'
+token = ''
 path = '/home/alex/PycharmProjects/coref/Bot/'
 
 class BotHandler:
