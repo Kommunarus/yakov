@@ -101,12 +101,13 @@ def threestep(tokens):
         with open(opt.outdir+'alias.txt', 'r') as ff:
             nom = ff.read()
             wordnom = morph.parse(nom.lower())[0]
-            # be_nom = True
+            be_nom = True
 
 
 
     for index, row in tokens.iterrows():
         word = morph.parse(row['head'].lower())[0]
+        word2 = morph.parse(row['token'].lower())[0]
         # if word.score < 0.8:
         #     check = Word(row['head'].lower())
         #     if not check.correct:
@@ -129,7 +130,22 @@ def threestep(tokens):
         tense = word.tag.tense # pres
 
         if be_nom:
-            row['nom3d'] = wordnom.inflect({'3per', number, tense}).word
+            if word2.tag.POS == 'NPRO' and word2.tag.case=='nomn' and number == 'sing':
+                row['nom3d'] = wordnom.inflect({ word2.tag.case, gender}).word
+            else:
+                pre = 'н' if row.adj_lem and row.adj_head == row.token_id else ''
+                if gender == 'masc' or gender == None or gender == 'neut':
+                    if row.token.lower() in NPRO:
+                        row['nom3d'] = pre + NPRO[row.token.lower()][0]
+                    else:
+                        row['nom3d'] = pre + NPRO['общий'][0]
+                elif gender == 'femn':
+                    if row.token.lower() in NPRO:
+                        row['nom3d'] = pre + NPRO[row.token.lower()][1]
+                    else:
+                        row['nom3d'] = pre + NPRO['общий'][1]
+
+
         else:
             pre = 'н'if row.adj_lem  and row.adj_head == row.token_id else ''
             if gender == 'masc' or gender == None or gender == 'neut':
@@ -149,6 +165,7 @@ def threestep(tokens):
 
         if person == '1per' and word.tag.POS in {'INFN', 'VERB'}:
             cases = {'3per', number, tense}
+            # cases = {'3per', number, tense}
             try:
                 w = word.inflect(cases).word
                 row['verb3d'] = w
