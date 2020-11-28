@@ -47,7 +47,7 @@
 
 ![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/6.png)
 
-Мы не нашли готовой обученной сети для русского датасета, поэтому решили ее  модернизировать и перевести на свой датасет и дообучить на текстах из задания МВД.
+Мы не нашли готовой обученной сети для русского датасета, поэтому решили ее  модернизировать и перевести на свой датасет и дообучить на текстах из интернета.
 
 Привет- ,- меня(0) зовут- Михаил- ,- мне(0) 30- лет- и- я(0) живу- в- Москве- .- Я(0) хочу(0) рассказать- про- волка- .- Он(1) был- злой- и- темный- .- Его(1) я(0) постараюсь- забыть- .-
 
@@ -64,17 +64,17 @@
 ![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/8.png)
 
 
-![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/9.png)
+![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/31.png)
 
 
 2. сделан чат бот телеграмма для удаленной работы. Нужно передать ему текстовый файл. В ответ вернется обработанный.
 @mksk0m_bot. 
 
-![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/20.png)
+![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/30.png)
 
 3. Сайт http://yakov.mkskom.ru/
 
-
+![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/32.png)
 
 
 
