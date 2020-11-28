@@ -61,10 +61,10 @@
 Результаты.
 1. сделан макрос для либраофиса.
 
-![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/8.png)
-
-
 ![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/31.png)
+
+
+![рисунок](https://github.com/Kommunarus/yakov/blob/master/img/33.png)
 
 
 2. сделан чат бот телеграмма для удаленной работы. Нужно передать ему текстовый файл. В ответ вернется обработанный.
