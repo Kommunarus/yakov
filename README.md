@@ -86,9 +86,9 @@
 
 Основные файлы.
 
-coreference_resolution/src/coref.py - обучение сети разрешения кореференции
-bot/bot.py - запуск телеграмм бота
-flask/ - сайт
+coreference_resolution/src/coref.py - обучение сети разрешения кореференции \n
+bot/bot.py - запуск телеграмм бота \n
+flask/ - сайт \n
 cluster.py - поиск кластеров в тексте
 pipline.py- скрипт замены лица
 mvd2020.py - макрос для либрофиса
