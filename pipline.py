@@ -131,7 +131,11 @@ def threestep(tokens):
 
         if be_nom:
             if word2.tag.POS == 'NPRO' and word2.tag.case=='nomn' and number == 'sing':
-                row['nom3d'] = wordnom.inflect({ word2.tag.case, gender}).word
+                try:
+                    row['nom3d'] = wordnom.inflect({ word2.tag.case, gender}).word
+                except:
+                    row['nom3d'] = wordnom.inflect({ word2.tag.case}).word
+
             else:
                 pre = 'н' if row.adj_lem and row.adj_head == row.token_id else ''
                 if gender == 'masc' or gender == None or gender == 'neut':
