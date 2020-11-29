@@ -4,6 +4,7 @@ from os import makedirs as make_dirs
 from os.path import join as join_path
 from os.path import abspath
 from os.path import exists as file_exist
+import subprocess
 
 import json
 import uuid
@@ -32,9 +33,14 @@ def transform():
     alias = request_data.get('alias', None)
     if input_text:
         req_uuid = str(uuid.uuid1())
-        req_uuid = "7ec3d6ec-30c1-11eb-a8b1-48ba4e478f7f"
+        # req_uuid = "7ec3d6ec-30c1-11eb-a8b1-48ba4e478f7f"
         temp_dir = store_to_temp_dir(input_text, alias, req_uuid) + '/'
         # Вызов функции тут
+        command = '/home/alex/anaconda3/envs/coref/bin/python'
+        path2script = '/home/alex/PycharmProjects/coref/pipline.py'
+        cmd = [command, path2script] + ['--outdir'] + [temp_dir]
+        subprocess.check_output(cmd, universal_newlines=True)
+
         response_object = get_result(req_uuid)
         return json.dumps(response_object)
 
